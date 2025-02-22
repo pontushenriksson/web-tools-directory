@@ -38,6 +38,11 @@ h1 {
   margin-bottom: 1.5rem;
 }
 
+h2 {
+  margin: 2rem 0 1rem;
+}
+
+/* Section grid */
 section {
   display: grid;
   grid-template-columns: 1fr;
@@ -46,6 +51,7 @@ section {
   margin: 2rem;
 }
 
+/* Card styles */
 .card {
   background-color: var(--card-background-color);
   border: var(--card-border);
@@ -56,11 +62,12 @@ section {
   align-items: center;
   gap: 1.5rem;
   text-align: center;
+  text-decoration: none;
   transition: background-color var(--transition-duration) ease,
     box-shadow var(--transition-duration) ease,
     border-color var(--transition-duration) ease;
+  /* On larger screens, keep a square card */
   aspect-ratio: 1/1;
-  text-decoration: none;
 }
 
 .card img {
@@ -96,7 +103,6 @@ section {
     color var(--transition-duration) ease;
 }
 
-/* Default hover pointer for tags */
 .card:hover span {
   cursor: pointer;
 }
@@ -172,6 +178,7 @@ footer a:hover {
 @media screen and (min-width: 768px) {
   section {
     grid-template-columns: repeat(2, 1fr);
+    margin: 2rem auto;
   }
 }
 
@@ -184,5 +191,37 @@ footer a:hover {
 @media screen and (min-width: 1200px) {
   section {
     grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* Mobile specific tweaks */
+@media screen and (max-width: 767px) {
+  /* Remove fixed aspect ratio so cards can expand based on content */
+  .card {
+    aspect-ratio: unset;
+    padding: 1rem;
+  }
+
+  /* Reduce section margin for better spacing on small devices */
+  section {
+    margin: 1rem 0;
+  }
+
+  /* Scale down images and adjust font sizes if needed */
+  .card img {
+    width: 60px;
+  }
+
+  .card h3 {
+    font-size: 1.1rem;
+  }
+
+  .card p {
+    font-size: 0.95rem;
+  }
+
+  .card span {
+    font-size: 0.95rem;
+    padding: 0.2rem 0.5rem;
   }
 }
