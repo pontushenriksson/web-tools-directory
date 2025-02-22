@@ -1,0 +1,188 @@
+:root {
+  --background-color: #0d1117;
+  --card-background-color: #161b22;
+  --card-hover-background: #1f2d3d;
+  --text-color: #c9d1d9;
+  --link-color: #58a6ff;
+  --padding: 2rem;
+  --card-padding: 1.5rem;
+  --card-margin-bottom: 1rem;
+  --card-border-radius: 0.5rem;
+  --card-border: 1px solid #30363d;
+  --card-hover-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+  --transition-duration: 0.3s;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  padding: var(--padding);
+  background-color: var(--background-color);
+  color: var(--text-color);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial,
+    sans-serif;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem;
+  text-align: center;
+}
+
+h1 {
+  margin-bottom: 1.5rem;
+}
+
+section {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--card-margin-bottom);
+  width: 100%;
+  margin: 2rem;
+}
+
+.card {
+  background-color: var(--card-background-color);
+  border: var(--card-border);
+  border-radius: var(--card-border-radius);
+  padding: var(--card-padding);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  text-align: center;
+  transition: background-color var(--transition-duration) ease,
+    box-shadow var(--transition-duration) ease,
+    border-color var(--transition-duration) ease;
+  aspect-ratio: 1/1;
+  text-decoration: none;
+}
+
+.card img {
+  width: 80px;
+  height: auto;
+  border-radius: var(--card-border-radius);
+}
+
+.card .description {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.card h3 {
+  font-size: 1.25rem;
+  margin: 0.5rem 0;
+  color: var(--link-color);
+}
+
+.card span {
+  font-size: 1rem;
+  padding: 0.25rem 0.75rem;
+  width: fit-content;
+  border-radius: var(--card-border-radius);
+  border: var(--card-border);
+  background-color: var(--card-background-color);
+  color: var(--text-color);
+  display: inline-block;
+  transition: background-color var(--transition-duration) ease,
+    border-color var(--transition-duration) ease,
+    color var(--transition-duration) ease;
+}
+
+/* Default hover pointer for tags */
+.card:hover span {
+  cursor: pointer;
+}
+
+/* Blue Tag */
+.tag-blue {
+  color: #0366d6;
+}
+.tag-blue:hover {
+  background: linear-gradient(45deg, #58a6ff, #0366d6);
+  color: #ffffff;
+  border-color: #0366d6;
+}
+
+/* Green Tag */
+.tag-green {
+  color: #28a745;
+}
+.tag-green:hover {
+  background: linear-gradient(45deg, #85e89d, #28a745);
+  color: #ffffff;
+  border-color: #28a745;
+}
+
+/* Purple Tag */
+.tag-purple {
+  color: #6f42c1;
+}
+.tag-purple:hover {
+  background: linear-gradient(45deg, #b392f0, #6f42c1);
+  color: #ffffff;
+  border-color: #6f42c1;
+}
+
+/* Red Tag */
+.tag-red {
+  color: #d73a49;
+}
+.tag-red:hover {
+  background: linear-gradient(45deg, #f97583, #d73a49);
+  color: #ffffff;
+  border-color: #d73a49;
+}
+
+.card p {
+  font-size: 1rem;
+  line-height: 1.4;
+  color: var(--text-color);
+}
+
+.card:hover {
+  background-color: var(--card-hover-background);
+  box-shadow: var(--card-hover-shadow);
+  border-color: var(--link-color);
+  cursor: pointer;
+}
+
+footer {
+  margin-top: 2rem;
+}
+
+footer a {
+  color: var(--link-color);
+  text-decoration: none;
+  transition: color var(--transition-duration) ease;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive grid layout */
+@media screen and (min-width: 768px) {
+  section {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  section {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  section {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
